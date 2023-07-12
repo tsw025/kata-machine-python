@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "last-algo"
+version = "0.1.0"
+description = "learning algorithms refresher"
+authors = ["Tharinda Wijesekera <seth.tharinda@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
