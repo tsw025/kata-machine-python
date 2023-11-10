@@ -19,6 +19,9 @@ class ListProtocol(Protocol[T]):
     def get(self, index: int) -> T | None:
         pass
 
+    def insert_at(self, item: T, index: int) -> None:
+        pass
+
     @property
     def length(self) -> int:
         pass
@@ -49,3 +52,6 @@ def test_list(list_imp: ListProtocol[int]):
     assert list_imp.remove(9) == 9
     assert list_imp.length == 2
     assert list_imp.get(0) == 7
+    list_imp.insert_at(10, 1)
+    assert list_imp.get(1) == 10
+    assert list_imp.length == 3
