@@ -44,8 +44,27 @@ class DoublyLinkedList(Generic[T]):
 
         first = self.head
         node.nex = first
-        self.head.pre = node
+        self.head.prev = node
         self.head = node
+
+    def insert_at(self, item: T, idx: int):
+        if idx >= self.length:
+            self.append(item)
+            return
+        if idx <= 0:
+            self.prepend(item)
+            return
+
+        node = Node(item)
+        self._length += 1
+        curr = self.head
+        for i in range(idx):
+            curr = curr.nex
+
+        node.nex = curr
+        node.prev = curr.prev
+        curr.prev = node
+        node.prev.nex = node
 
     def remove(self, item: T) -> T | None:
         if not (self.head and self.tail):
