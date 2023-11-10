@@ -1,12 +1,6 @@
 from typing import List
-from dataclasses import dataclass
 
-
-@dataclass
-class Point:
-    x: int
-    y: int
-
+from src.globals_d import Point
 
 directions = [
     (1, 0),

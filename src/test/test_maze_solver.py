@@ -1,5 +1,6 @@
 import pytest
-from src.day1.maze_solver import maze_solver, Point
+from src.day1.maze_solver import maze_solver
+from src.globals_d import Point
 
 
 def test_maze_solver():
